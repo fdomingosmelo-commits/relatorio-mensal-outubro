@@ -1,0 +1,314 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Núcleo SM – Outubro 2026</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Layout: relatório de página única, secções em sequência com índice no topo; tabelas com scroll próprio. */
+:root{
+  --p:#0052CC;--pl:#DEEBFF;--hd1:#0747A6;--hd2:#0052CC;--hdt:#FFFFFF;--hds:#B3D4FF;
+  --ok:#006644;--okl:#E3FCEF;--w:#825E00;--wl:#FFFAE6;--wb:#FFAB00;--d:#BF2600;--dl:#FFEBE6;--n:#42526E;--nl:#EBECF0;
+  --bg:#F4F5F7;--card:#FFFFFF;--soft:#FAFBFC;--th:#F4F5F7;--b:#DFE1E6;--t:#172B4D;--s:#5E6C84;
+  --font:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --p:#579DFF;--pl:#1C2B41;--hd1:#09326C;--hd2:#0C4A9E;--hdt:#FFFFFF;--hds:#B3D4FF;
+  --ok:#7EE2B8;--okl:#1C3329;--w:#F5CD47;--wl:#332E1B;--wb:#CF9F02;--d:#FD9891;--dl:#42221F;--n:#B6C2CF;--nl:#2C333A;
+  --bg:#161A1D;--card:#1D2125;--soft:#22272B;--th:#22272B;--b:#38414A;--t:#DEE4EA;--s:#9FADBC;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --p:#579DFF;--pl:#1C2B41;--hd1:#09326C;--hd2:#0C4A9E;--hdt:#FFFFFF;--hds:#B3D4FF;
+  --ok:#7EE2B8;--okl:#1C3329;--w:#F5CD47;--wl:#332E1B;--wb:#CF9F02;--d:#FD9891;--dl:#42221F;--n:#B6C2CF;--nl:#2C333A;
+  --bg:#161A1D;--card:#1D2125;--soft:#22272B;--th:#22272B;--b:#38414A;--t:#DEE4EA;--s:#9FADBC;color-scheme:dark}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--t);font-family:var(--font);font-size:14px;line-height:1.55;padding-block:24px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.c{max-width:1250px;margin:0 auto;background:var(--card);border-radius:8px;box-shadow:0 1px 3px rgba(9,30,66,.15);overflow:hidden}
+header{padding:24px 32px;background:linear-gradient(135deg,var(--hd1),var(--hd2));color:var(--hdt);display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+header h1{font-size:22px;font-weight:650;text-wrap:balance}header p{font-size:13px;color:var(--hds);margin-top:4px;max-width:80ch}
+.bp{background:#fff;color:#0052CC;border:none;padding:8px 16px;border-radius:4px;font-weight:600;cursor:pointer;font-size:13px}
+nav{display:flex;flex-wrap:wrap;gap:2px 4px;background:var(--soft);border-bottom:2px solid var(--b);padding:6px 24px}
+nav a{padding:8px 12px;font-size:13px;font-weight:600;color:var(--s);border-radius:4px}
+nav a:hover,nav a:focus-visible{color:var(--p);background:var(--pl);text-decoration:none;outline:none}
+section{padding:28px 32px;border-bottom:1px solid var(--b)}section:last-of-type{border-bottom:none}
+h2{font-size:18px;margin-bottom:6px;text-wrap:balance}h3{font-size:15px;margin:22px 0 10px}
+.lead{color:var(--s);font-size:13px;margin-bottom:16px;max-width:95ch}
+.k{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:16px 0 22px}
+.kc{background:var(--soft);border:1px solid var(--b);border-radius:6px;padding:14px;min-width:0}
+.kt{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--s)}
+.kv{font-size:26px;font-weight:700;margin:4px 0;font-variant-numeric:tabular-nums}.kd{font-size:12px;color:var(--s)}
+.tw{border:1px solid var(--b);border-radius:6px;overflow-x:auto;margin-bottom:8px}
+table{width:100%;border-collapse:collapse}
+th{background:var(--th);color:var(--s);font-size:11px;text-transform:uppercase;letter-spacing:.03em;padding:10px 12px;text-align:left;white-space:nowrap;border-bottom:1px solid var(--b)}
+td{padding:9px 12px;border-bottom:1px solid var(--b);font-size:13px;vertical-align:top}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr:last-child td{border-bottom:none}tr.tot td{background:var(--soft);font-weight:700}
+a{color:var(--p);text-decoration:none;font-weight:600}a:hover{text-decoration:underline}
+.bd{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700;white-space:nowrap}
+.g{background:var(--okl);color:var(--ok)}.y{background:var(--wl);color:var(--w)}.r{background:var(--dl);color:var(--d)}.bl{background:var(--pl);color:var(--p)}.gr{background:var(--nl);color:var(--n)}
+.n{font-size:12px;color:var(--s);margin-top:8px;max-width:110ch}
+.box{background:var(--wl);border-left:4px solid var(--wb);padding:12px 14px;border-radius:4px;margin:12px 0;font-size:13px}
+.msg{display:grid;gap:10px;margin:8px 0 4px;list-style:none;margin-left:0}
+.msg li{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;margin:0}
+.msg .bd{margin-top:2px;min-width:64px;text-align:center}
+ul.pl{margin:6px 0 6px 20px}ul.pl li{margin:3px 0}
+.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:14px}
+.pc{border:1px solid var(--b);border-radius:6px;padding:16px;min-width:0;display:flex;flex-direction:column;gap:8px}
+.pc h4{font-size:15px;display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap}
+.meta{font-size:12px;color:var(--s)}
+.pc dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 12px;font-size:13px}
+.pc dt{color:var(--s)}.pc dd{min-width:0}
+.cov td{text-align:center}.cov td:first-child{text-align:left}
+.ok{color:var(--ok);font-weight:700}.no{color:var(--d);font-weight:700}.pa{color:var(--w);font-weight:700}
+@media (max-width:640px){header,section{padding-left:18px;padding-right:18px}nav{padding:6px 10px}.pg{grid-template-columns:1fr}}
+@media print{body{padding:0;background:#fff}.c{box-shadow:none}.bp,nav{display:none}section{page-break-inside:auto}.pc,.kc,tr{break-inside:avoid}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+<div class="c">
+<header>
+<div><h1>Relatório Mensal do Núcleo de Scrum Masters – Outubro 2026</h1>
+<p>Consolidação de 9 projetos (SIRIS, TAAG Odoo, MOVPAV, ABIO, TIS Performance, CMMI, PTT-IEC, PTT-IVA e PTT-Cadastro) a partir das atas de cerimónias, planilhas de planning/review/retro e relatórios de sprint do Jira. Dados até 29/10/2026. Destinado à gestão.</p></div>
+</header>
+<nav aria-label="Secções">
+<a href="#resumo">Resumo</a><a href="#portfolio">Portfólio</a><a href="#projetos">Projetos</a><a href="#riscos">Riscos e impedimentos</a><a href="#retros">Retrospetivas</a><a href="#decisoes">Pedidos à gestão</a>
+</nav>
+
+<!-- RESUMO -->
+<section id="resumo">
+<h2>Resumo executivo</h2>
+<p class="lead">Todos os projectos em execução possuem dados de execução.</p>
+<div class="k">
+<div class="kc"><div class="kt">Itens entregues / planeados</div><div class="kv" style="color:var(--d)">38,3%</div><div class="kd">163 de 426 itens · 7 projetos com execução, incluindo o SIRIS</div></div>
+<div class="kc"><div class="kt">Impedimentos em aberto no fecho</div><div class="kv">36</div><div class="kd">SIRIS 23 · MOVPAV 12 · ABIO 1 (a 28–29/10)</div></div>
+<div class="kc"><div class="kt">Retrabalho QA → Impedimento</div><div class="kv">19,6–26,7%</div><div class="kd">SIRIS 19,6% · MOVPAV 25,0% · ABIO 26,7% (bases diferentes, ver Fontes)</div></div>
+<div class="kc"><div class="kt">Aceitação nas reviews</div><div class="kv">56 / 56</div><div class="kd">Itens demonstrados e aceites: TAAG 10/10 (nota 5,0) · SIRIS 46/46 (nota 4,7)</div></div>
+<div class="kc"><div class="kt">Cerimónias documentadas</div><div class="kv">27 / 27</div><div class="kd">Planning, review e retro em todos os projectos (100%)</div></div>
+</div>
+<h3>Mensagens principais</h3>
+<ul class="msg">
+<li><span class="bd r">Crítico</span><span><b>SIRIS</b> finalizou 121 de 337 itens planeados (35,9%). 82% do que foi finalizado está à espera de homologação do cliente (99 itens), 46 itens estão parados em To Deploy e 23 continuam em Impedimento, 7 deles no Portal de Mediadores há 17 a 29 dias.</span></li>
+<li><span class="bd r">Crítico</span><span><b>MOVPAV</b> entregou 18 de 48 itens da Sprint 12 (37,5%). 12 itens estão em IMPEDIMENT, 5 há mais de 20 dias. A retrospetiva aponta o acesso à API do MINFIN e a instabilidade dos ambientes como causa principal.</span></li>
+<li><span class="bd g">Em linha</span><span><b>ABIO</b> entregou 14 de 15 itens (93,3%), <b>TAAG Odoo</b> demonstrou e viu aceites os 10 itens da Sprint 4 (55 de 55 pontos)</span></li>
+<li><span class="bd y">Atenção</span><span><b>PTT - AGT</b> Itens do IEC, IVA e Cadastro iniciados no mês de Outubro.</span></li>
+<li><span class="bd y">Atenção</span><span>A <b>TAAG Odoo</b> comprometeu 53 pontos na Sprint 5 para uma capacidade de 38,25 (139%). TIS Performance (100,7%) e CMMI (96%) também entram em novembro no limite da capacidade.</span></li>
+<li><span class="bd bl">Transversal</span><span>As retrospetivas repetem três temas em vários projetos: Ausência de descrição e refinamento das atividades, Sem construção prévia dos backlogs, ambientes de teste instáveis e falta de capacidade de QA. A colaboração entre DEV e QA é o ponto positivo em todos.</span></li>
+
+</ul>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+<h2>Visão de portfólio</h2>
+<p class="lead">Estado do mês por projeto. Critério: <span class="bd g">Em linha</span> ≥ 80% entregue e sem bloqueios prolongados · <span class="bd y">Atenção</span> 40–80% ou risco de compromisso · <span class="bd r">Crítico</span> &lt; 40% ou bloqueios com mais de 20 dias · <span class="bd gr">Sem dados</span> sem execução reportada.</p>
+<div class="tw"><table>
+<thead><tr><th>Projeto</th><th>Scrum Master</th><th>Sprint(s) de outubro</th><th class="num">Planeados</th><th class="num">Entregues</th><th class="num">% entrega</th><th>Impedimentos em aberto</th><th>Estado</th></tr></thead>
+<tbody>
+<tr><td><b>SIRIS</b> (Baluarte / GIANT)</td><td>Florinda Morais</td><td>35 sprints do quadro 68 (28 abertas, 7 fechadas)</td><td class="num">337</td><td class="num">121</td><td class="num">35,9%</td><td>23 (mais 22 fora das sprints há +30 dias)</td><td><span class="bd r">Crítico</span></td></tr>
+<tr><td><b>MOVPAV</b> – Migração Odoo v16→v18</td><td>Conceição Guerra Domingos</td><td>Sprint 12 · 12/10 – 26/10</td><td class="num">48</td><td class="num">18</td><td class="num">37,5%</td><td>12 (5 com +20 dias)</td><td><span class="bd r">Crítico</span></td></tr>
+<tr><td><b>ABIO</b> – Academia BAI</td><td>Conceição Guerra Domingos</td><td>Sprint 4 · 06/10 – 20/10 · Sprint 5 · 22/10 – 29/10</td><td class="num">15</td><td class="num">14</td><td class="num">93,3%</td><td>1 (ABIO-75, 9 dias)</td><td><span class="bd g">Em linha</span></td></tr>
+<tr><td><b>TAAG Odoo</b> – Recrutamento</td><td>Florinda Morais</td><td>Sprint 4 · 14/10 – 28/10</td><td class="num">10</td><td class="num">10</td><td class="num">100%</td><td>0</td><td><span class="bd g">Em linha</span></td></tr>
+<tr><td><b>TIS Performance</b> (SADETIS)</td><td>Conceição Guerra Domingos</td><td>Sprint 15 (retro a 27/10) · Sprint 16 desde 28/10</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td>2 bloqueados à entrada da Sprint 16</td><td><span class="bd gr">Sem dados</span></td></tr>
+<tr><td><b>CMMI</b> (CC)</td><td>Conceição Guerra Domingos</td><td>Sprint 21 · 26/10 – 09/11</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td>5 bloqueados à entrada da Sprint 21</td><td><span class="bd gr">Sem dados</span></td></tr>
+<tr><td><b>PTT - IEC</b></td><td>Francisco Carvalho</td><td>Sprint 02 · 13/10 – 03/11</td><td class="num">6</td><td class="num">0</td><td class="num">0,0%</td><td>Problemas no ambiente de QA</td><td><span class="bd r">Crítico</span></td></tr>
+<tr><td><b>PTT - IVA</b></td><td>Fernanda Melo</td><td>Sprint 1/11 · 01/10 – 23/10</td><td class="num">4</td><td class="num">0</td><td class="num">0,0%</td><td>Problemas no ambiente de QA</td><td><span class="bd r">Crítico</span></td></tr>
+<tr><td><b>PTT - Cadastro</b></td><td>Maristela Caetano</td><td>Sprint 01 · 06/10 – 20/10 · Sprint 02 · 21/10 – 05/11</td><td class="num">6</td><td class="num">0</td><td class="num">0,0%</td><td>Itens não concluídos na sprint, migrados para Sprint 02</td><td><span class="bd r">Crítico</span></td></tr>
+<tr class="tot"><td>Total (7 projetos com execução)</td><td></td><td></td><td class="num">426</td><td class="num">163</td><td class="num">38,3%</td><td>36</td><td></td></tr>
+</tbody></table></div>
+<p class="n">"Entregue" segue a regra de cada fonte: SIRIS = itens que entraram em Homologação ou Concluído em outubro; MOVPAV e ABIO = itens em DONE até 28/10; TAAG = itens demonstrados e aceites na review; PTT (IEC, IVA e Cadastro) = 0 itens concluídos, todos migrados para a Sprint 02. TIS Performance e CMMI ficam fora do total por não terem planeados/entregues reportados. O total inclui o SIRIS e junta as regras de cada projeto.</p>
+
+<h3>Cerimónias documentadas em outubro</h3>
+<div class="tw"><table class="cov">
+<thead><tr><th>Projeto</th><th>Planning</th><th>Review</th><th>Retrospetiva</th><th style="text-align:left">Observação</th></tr></thead>
+<tbody>
+<tr><td>SIRIS</td><td class="ok">Sim</td><td class="ok">Sim</td><td class="ok">Sim</td><td style="text-align:left">Review geral a 15/10; plannings de Marítimo e Casco e de Construção e Montagem</td></tr>
+<tr><td>MOVPAV</td><td class="ok">Sim</td><td class="ok">Sim</td><td class="ok">Sim</td><td style="text-align:left">N/A</td></tr>
+<tr><td>ABIO</td><td class="ok">Sim</td><td class="ok">Sim</td><td class="ok">Sim</td><td style="text-align:left">N/A</td></tr>
+<tr><td>TAAG Odoo</td><td class="ok">Sim</td><td class="ok">Sim</td><td class="ok">Sim</td><td style="text-align:left">N/A</td></tr>
+<tr><td>TIS Performance</td><td class="ok">Sim</td><td class="ok">Sim</td><td class="ok">Sim</td><td style="text-align:left">N/A</td></tr>
+<tr><td>CMMI</td><td class="ok">Sim</td><td class="ok">Sim</td><td class="ok">Sim</td><td style="text-align:left">N/A</td></tr>
+<tr><td>PTT - IEC</td><td class="ok">Sim</td><td class="ok">Sim</td><td class="ok">Sim</td><td style="text-align:left">Itens migrou para Sprint 02</td></tr>
+<tr><td>PTT - IVA</td><td class="ok">Sim</td><td class="ok">Sim</td><td class="ok">Sim</td><td style="text-align:left">N/A</td></tr>
+<tr><td>PTT - Cadastro</td><td class="ok">Sim</td><td class="ok">Sim</td><td class="ok">Sim</td><td style="text-align:left">Itens migrou para Sprint 02</td></tr>
+<tr class="tot"><td>Total</td><td>9 de 9</td><td>9 de 9</td><td>9 de 9</td><td style="text-align:left">27 de 27 cerimónias com registo válido</td></tr>
+</tbody></table></div>
+</section>
+
+<!-- PROJETOS -->
+<section id="projetos">
+<h2>Destaques por projeto</h2>
+<p class="lead">Objetivo, resultado e principais pontos de cada projeto, como constam nas atas e relatórios.</p>
+<div class="pg">
+
+<div class="pc"><h4>SIRIS – Baluarte / GIANT <span class="bd r">Crítico</span></h4>
+<div class="meta">SM Florinda Morais · Jira quadro 68 · relatório SIRIS v1.2 (Gerson Fuca), dados a 29/10 09:20</div>
+<dl>
+<dt>Produtividade</dt><dd>121 de 337 itens (35,9%): 99 em Homologação e 22 Concluídos. Subtarefas: 183 de 318 (57,5%)</dd>
+<dt>Entregas DEV</dt><dd>209 (Dev Doing → To Deploy); 41 devolvidas (retrabalho 19,6%)</dd>
+<dt>QA</dt><dd>195 testes, 150 aprovados, 59 reprovados (71,8% de aprovação); 52,8% dos testados sem caso de teste</dd>
+<dt>Lead time</dt><dd>8,85 dias em média (amostra de 8); 79% do tempo à espera em To Deploy e To Test</dd>
+<dt>Review 15/10</dt><dd>46 itens demonstrados e aceites, nota média 4,7 (Saúde, Chatbot, Transversais, Cosseguro, Mercadorias, Vida, Marítimo e Casco, Embarcação de Recreio)</dd>
+</dl>
+<ul class="pl">
+<li>Sprint 55 – IOPS e Contabilidade 2 concentra 80 itens (24% do planeado) e tinha 46,2% finalizado a 4 dias do fim (02/11).</li>
+<li>Melhor execução: Sprint 50 – Saúde e Backlog RCG (13 de 15 cada).</li>
+<li>Sprint 51 – Acidentes Pessoais e Sprint 51 – Viagens 02 fecharam com 0 itens finalizados.</li>
+<li>15 sprints continuam abertas com a data de fim ultrapassada.</li>
+<li>Um developer fez 30% das entregas do mês (63 de 209), sobretudo IOPs e Transversais.</li>
+</ul></div>
+
+<div class="pc"><h4>MOVPAV – Migração Odoo v16→v18 <span class="bd r">Crítico</span></h4>
+<div class="meta">SM Conceição Guerra Domingos · PO José Gama · Sprint 12 (12/10 – 26/10)</div>
+<dl>
+<dt>Objetivo</dt><dd>Validador do SAFT da faturação eletrónica e mapeamento de contas de regras salariais para órgãos sociais</dd>
+<dt>Entrega</dt><dd>18 de 48 itens (37,5%) · 49 de 116 SP (42,2%); 13 itens dentro da janela da sprint</dd>
+<dt>Retrabalho</dt><dd>12 itens (25%) passaram de QA para IMPEDIMENT</dd>
+<dt>Impedimento</dt><dd>4,96 dias em média; 12 itens ainda bloqueados</dd>
+<dt>Lead time</dt><dd>22,34 dias (12,14 dias para itens iniciados em outubro)</dd>
+<dt>Review 23/10</dt><dd>10 atividades concluídas apresentadas, avaliação "Bom", sem presença do cliente</dd>
+</dl>
+<ul class="pl">
+<li>Os 30 itens não entregues passaram para a Sprint 13.</li>
+<li>Itens antigos ficaram 3 a 6 semanas em READY TO DEPLOY (ex.: MOVPAV-304, 51 dias de lead time).</li>
+<li>Os bloqueios concentram-se em NIF / faturação eletrónica (MOVPAV-206, 320, 338, 340, 347, 352, 355, 356).</li>
+</ul></div>
+
+<div class="pc"><h4>ABIO – Academia BAI <span class="bd g">Em linha</span></h4>
+<div class="meta">SM Conceição Guerra Domingos · PO Hermenegildo Miguel · Sprint 4 (06/10 – 20/10) e Sprint 5 (22/10 – 29/10)</div>
+<dl>
+<dt>Objetivo</dt><dd>Ajustes finais de CRM, marketing de redes sociais e integração Primavera</dd>
+<dt>Entrega</dt><dd>14 de 15 itens (93,3%) · 20 de 21 SP (95,2%)</dd>
+<dt>Retrabalho</dt><dd>4 itens (26,7%)</dd>
+<dt>Impedimento</dt><dd>3,32 dias em média; ABIO-75 (modelos de e-mail) bloqueado desde 19/10</dd>
+<dt>Lead time</dt><dd>8,34 dias</dd>
+<dt>Review 22/10</dt><dd>7 atividades concluídas; a ata indica 80% concluído e atrasos do cliente em dados e esclarecimentos; avaliação "Bom", sem cliente</dd>
+</dl>
+<ul class="pl">
+<li>Equipa muito reduzida: 32 h de DEV e 32 h de QA na Sprint 4; 8 h de DEV na Sprint 5 (Johnatan Souza com 0 h nas duas).</li>
+</ul></div>
+
+<div class="pc"><h4>TAAG Odoo – Recrutamento <span class="bd g">Em linha</span></h4>
+<div class="meta">SM Florinda Morais · PO Hermenegildo Miguel · Sprint 4 (14/10 – 28/10)</div>
+<dl>
+<dt>Objetivo</dt><dd>Completar o ciclo de vida da candidatura: avaliações, seleção, aprovação de propostas e encerramento auditável das vagas</dd>
+<dt>Review 28/10</dt><dd>10 de 10 itens demonstrados e aceites · 55 de 55 pontos · nota média 5,0</dd>
+<dt>Entregas</dt><dd>Triagem de currículos e guião de entrevista com IA, relatório de entrevista, match de candidatos com exportação Excel, desempenho dos recrutadores, auditoria do processo, marca de água, política de proteção de dados</dd>
+<dt>Retro 28/10</dt><dd>5 perceções, 42 votos, satisfação 5,0; plano de melhoria sem ações registadas</dd>
+</dl>
+<ul class="pl">
+<li>Sem feedback de stakeholders registado na review.</li>
+<li>Sprint 5 arranca com 139% da capacidade comprometida (ver <a href="#novembro">Sprints em curso</a>).</li>
+</ul></div>
+
+<div class="pc"><h4>TIS Performance (SADETIS) <span class="bd gr">Sem dados</span></h4>
+<div class="meta">SM Conceição Guerra Domingos · PO Sellys Muhongo · Retro Sprint 15 a 27/10 · Sprint 16 (28/10 – 12/11)</div>
+<dl>
+<dt>Retro 27/10</dt><dd>O último deploy foi mais produtivo; falhas de transparência, requisitos por ajustar após refinamento, itens em TO DO QA que não estão no ambiente de teste, equipa sem acesso ao documento de requisitos</dd>
+<dt>Sprint 16</dt><dd>Objetivo: finalizar a validação das métricas dos OKR. 24 itens, 71,5 pts para 71 de capacidade; 13 já estão em teste</dd>
+</dl></div>
+
+<div class="pc"><h4>CMMI (CC) <span class="bd gr">Sem dados</span></h4>
+<div class="meta">SM Conceição Guerra Domingos · PO Adilson Quifucussa · Sprint 21 (26/10 – 09/11)</div>
+<dl>
+<dt>Objetivo</dt><dd>Finalizar o macrofluxo e subprocessos por área e a padronização do Jira</dd>
+<dt>Planning</dt><dd>46 itens e 77 pts na lista (o cabeçalho indica 30 itens); 5 bloqueados; 12 em teste e 13 em desenvolvimento à entrada</dd>
+<dt>Destaques</dt><dd>Gestão documental ISO 9001 em SharePoint, CMMI Board, procedimento de estimativa de esforço, planos de treino (PMO, CAR, CM), categorização de horas</dd>
+<dt>Bloqueados</dt><dd>CC-403 indicadores com o PMO, CC-242 e CC-231 revisões por pares, CC-390 modelo de registo no Jira, CC-75 backlog grooming</dd>
+</dl></div>
+
+<div class="pc"><h4>PTT - IEC<span class="bd r">Crítico</span></h4>
+<div class="meta">SM Francisco Carvalho · PO Anabelmo Feijó · TL Italo Souza · Sprint 02 (13/10 – 03/11)</div>
+<dl>
+<dt>Objetivo</dt><dd>Operações sujeitas a IEC (épico DEV-14355, Plano de Transição Tecnológica)</dd>
+<dt>Âmbito</dt><dd>6 histórias: acesso à página IEC, declaração manual, declaração por ficheiro, validação de dados, submissão automática via faturação eletrónica, consulta de operações e de ficheiros submetidos</dd>
+<dt>Capacidade</dt><dd>Equipa mista GTI/TIS: 150 pts DEV, 54 QA, 80 ENG, 6 UI/UX</dd>
+
+</dl></div>
+
+<div class="pc"><h4>PTT - IVA<span class="bd r">Crítico</span></h4>
+<div class="meta">SM Fernanda Melo · POs Rui, Cremilda e Wladimir · Sprint 01/10 – 23/10</div>
+<dl>
+<dt>Âmbito</dt><dd>Blueprint simplificado da Declaração Periódica de IVA v1.0 (DEV-14342): 4 itens, 84 pts DEV + 15 pts QA + 29 pts Eng</dd>
+<dt>Estado</dt><dd>Os 4 itens (DEV-14344, 14402, 14403, 14412) Foram migrados para Sprint 02 para testes</dd>
+
+</dl></div>
+
+<div class="pc"><h4>PTT - Cadastro<span class="bd r">Crítico</span></h4>
+<div class="meta">SM Maristela Caetano · PO Anabelmo Feijó · TL Italo Souza · Sprint 01 (06/10 – 20/10) e Sprint 02 (21/10 – 05/11)</div>
+<dl>
+<dt>Objetivo</dt><dd>Cadastro do contribuinte singular (épico DEV-14391, Plano de Transição Tecnológica)</dd>
+<dt>Âmbito</dt><dd>6 histórias: registar NIF, criar conta no portal por NIF/BI, informações de cadastro com e sem atividade, editar informações com e sem atividade</dd>
+<dt>Pesos</dt><dd>52,5 pts (15 FE, 16 BE, 16 QA, 5,5 ENG)</dd>
+<dt>Capacidade</dt><dd>Equipa mista GTI/TIS de 21 pessoas: 280 pts DEV, 215 QA, 140 ENG, 105 UI/UX</dd>
+<dt>Estado</dt><dd>Todas as subtarefas em DEV-TODO nas duas plannings; a Sprint 02 é igual à Sprint 01</dd>
+</dl>
+<ul class="pl">
+
+</ul></div>
+</div>
+</section>
+
+<!-- RISCOS -->
+<section id="riscos">
+<h2>Riscos e impedimentos</h2>
+<p class="lead">Riscos do portfólio a partir das evidências do mês. Nível: Alto exige ação imediata; Médio acompanha-se na próxima sprint.</p>
+<div class="tw"><table>
+<thead><tr><th>#</th><th>Risco</th><th>Projetos</th><th>Evidência</th><th>Nível</th><th>Mitigação proposta</th></tr></thead>
+<tbody>
+<tr><td>R1</td><td>Bloqueios prolongados sem dono nem data</td><td>SIRIS, MOVPAV</td><td>SIRIS: 7 tickets do Portal de Mediadores bloqueados há 17 a 29 dias e já fora das sprints ativas; 45 em Impedimento no projeto, 22 há +30 dias. MOVPAV: 12 em IMPEDIMENT, 5 há +20 dias</td><td><span class="bd r">Alto</span></td><td>Triagem semanal de impedimentos com responsável e data; escalar o acesso à API MINFIN</td></tr>
+<tr><td>R2</td><td>Trabalho feito sem aceitação do cliente</td><td>SIRIS, MOVPAV, ABIO</td><td>158 itens SIRIS em Homologação (119 sem mudança há +7 dias); reviews MOVPAV e ABIO feitas sem cliente; ABIO à espera de dados do cliente</td><td><span class="bd r">Alto</span></td><td>Calendário fixo de homologação e presença do cliente nas reviews</td></tr>
+<tr><td>R3</td><td>MVP regulatório IOPS / ARSEG</td><td>SIRIS</td><td>Sprint 55: 80 itens, 46,2% finalizado a 4 dias do fim (02/11), 9 em Impedimento, 7 deles mapas IOP</td><td><span class="bd r">Alto</span></td><td>Confirmar o resultado da sprint e o âmbito mínimo entregue à ARSEG</td></tr>
+<tr><td>R4</td><td>Gargalo depois do desenvolvimento (deploy e QA)</td><td>SIRIS, MOVPAV, TIS Performance</td><td>SIRIS: 46 em To Deploy, 79% do lead time em espera. MOVPAV: itens 3 a 6 semanas em READY TO DEPLOY; retro pede mais testers. TIS Performance: QA recebe poucos itens</td><td><span class="bd y">Médio</span></td><td>Janela de deploy fixa; reforço ou redistribuição de QA</td></tr>
+<tr><td>R5</td><td>Ambientes de teste instáveis ou indisponíveis</td><td>MOVPAV, ABIO, TIS Performance</td><td>Ambientes em baixo (MOVPAV), mudanças de ambiente sem aviso e falta de ambiente de teste (ABIO), itens em QA que não estão no ambiente (TIS Performance)</td><td><span class="bd y">Médio</span></td><td>Aviso prévio de mudanças e verificação do deploy antes de mover para QA</td></tr>
+<tr><td>R6</td><td>Requisitos e refinamento insuficientes</td><td>ABIO, TIS Performance, TAAG</td><td>Descrições sem caminho de teste, requisitos ajustados após refinamento, sem acesso ao documento de requisitos; TAAG vota "melhorar descrição das tarefas"</td><td><span class="bd y">Médio</span></td><td>Definition of Ready comum e refinamento 1–2 vezes por semana</td></tr>
+<tr><td>R7</td><td>Sobrecompromisso nas sprints de novembro</td><td>TAAG, TIS Performance, CMMI</td><td>TAAG Sprint 5: 53 pts para 38,25 (139%); TIS Performance 100,7%; CMMI 96% com 5 itens já bloqueados</td><td><span class="bd y">Médio</span></td><td>Rever o compromisso da TAAG Sprint 5 com o PO</td></tr>
+<tr><td>R8</td><td>Dependência de pessoas-chave</td><td>SIRIS, ABIO</td><td>SIRIS: um developer com 30% das entregas. ABIO: um único QA e um único DEV com horas alocadas</td><td><span class="bd y">Médio</span></td><td>Pares e partilha de conhecimento nas áreas críticas</td></tr>
+
+</tbody></table></div>
+</section>
+
+
+<!-- RETROS -->
+<section id="retros">
+<h2>Retrospetivas: o que a equipa pediu</h2>
+<p class="lead">Ações acordadas nas retrospetivas de outubro. Nenhuma tem prazo registado e só uma tem responsável nomeado, por isso o núcleo deve acompanhar o seu fecho na próxima retro.</p>
+<div class="tw"><table>
+<thead><tr><th>Projeto</th><th>Correu bem</th><th>A melhorar</th><th>Ações acordadas</th></tr></thead>
+<tbody>
+<tr><td>MOVPAV</td><td>Comunicação DEV–QA fluida; atividades bem descritas; entreajuda</td><td>Ambientes em baixo; acesso à API do MINFIN deixa muitas atividades em IMPEDIMENT; testes lentos por falta de testers</td><td><ul class="pl"><li>Validar com a equipa de managed service o acesso à API do MINFIN</li><li>Relembrar a PMO (Ailsa) sobre a capacidade de testes</li></ul></td></tr>
+<tr><td>ABIO</td><td>Integração DEV, engenharia e testes; entreajuda</td><td>Passagem de conhecimento entre POs; descrições sem caminho de teste; mudanças de ambiente sem aviso</td><td><ul class="pl"><li>Melhorar a comunicação entre POs e a escrita das atividades</li><li>Janilcia valida a falta de ambiente de teste</li></ul></td></tr>
+<tr><td>TIS Performance</td><td>Último deploy produtivo; comunicação DEV–QA; entreajuda</td><td>Transparência; requisitos ajustados depois do refinamento; itens em QA fora do ambiente; sem acesso ao documento de requisitos; descrições sem padrão</td><td><ul class="pl"><li>Só entram no refinamento itens totalmente prontos</li><li>Refinamento 1–2 vezes por semana</li><li>Partilhar o documento de requisitos e padronizar descrições com a equipa de requisitos</li><li>Testar o deploy antes de mover as atividades</li><li>Reunião sobre o papel de cada cerimónia</li></ul></td></tr>
+<tr><td>TAAG Odoo</td><td>Comunicação aberta e clara (10 votos); disponibilidade do PO (10 votos)</td><td>Descrição das tarefas (10 votos); refinamento olhando o sistema (10 votos); cenários de teste (2 votos)</td><td>5 perceções marcadas para ação, mas o plano de melhoria está vazio</td></tr>
+</tbody></table></div>
+
+<h3>Temas que se repetem</h3>
+<div class="tw"><table class="cov">
+<thead><tr><th>Tema</th><th>MOVPAV</th><th>ABIO</th><th>TIS Perf.</th><th>TAAG</th><th>SIRIS*</th></tr></thead>
+<tbody>
+<tr><td>Descrição das atividades / refinamento</td><td></td><td class="ok">●</td><td class="ok">●</td><td class="ok">●</td><td class="ok">●</td></tr>
+<tr><td>Ambientes de teste instáveis ou sem aviso</td><td class="ok">●</td><td class="ok">●</td><td class="ok">●</td><td></td><td></td></tr>
+<tr><td>Capacidade de QA / fila de teste e deploy</td><td class="ok">●</td><td></td><td class="ok">●</td><td class="ok">●</td><td class="ok">●</td></tr>
+<tr><td>Dependência do cliente (dados, validação, acessos)</td><td class="ok">●</td><td class="ok">●</td><td></td><td></td><td class="ok">●</td></tr>
+<tr><td>Colaboração DEV–QA como ponto forte</td><td class="ok">●</td><td class="ok">●</td><td class="ok">●</td><td class="ok">●</td><td></td></tr>
+</tbody></table></div>
+<p class="n">* SIRIS não tem retrospetiva em outubro; os temas vêm das ações recomendadas e dos gargalos do relatório SIRIS v1.2 (critérios de aceitação, filas de deploy e QA, homologação do cliente, cobertura de testes).</p>
+</section>
+
+
+<!-- DECISOES -->
+<section id="decisoes">
+<h2>Pedidos à gestão</h2>
+<p class="lead">Pontos em que o núcleo precisa de apoio ou decisão fora das equipas.</p>
+<div class="tw"><table>
+<thead><tr><th>#</th><th>Pedido</th><th>Porquê</th><th>Prioridade</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Escalar o acesso à API do MINFIN com a equipa de managed service</td><td>Principal causa dos 12 itens bloqueados na MOVPAV</td><td><span class="bd r">Alta</span></td></tr>
+<tr><td>2</td><td>Agendar sessões de homologação com Baluarte / GIANT e garantir o cliente nas reviews da MOVPAV e da ABIO</td><td>158 itens SIRIS à espera de aceitação; reviews de outubro sem cliente</td><td><span class="bd r">Alta</span></td></tr>
+<tr><td>3</td><td>Nomear dono e data para os bloqueios do Portal de Mediadores</td><td>7 tickets bloqueados até 29 dias, já fora das sprints ativas</td><td><span class="bd r">Alta</span></td></tr>
+<tr><td>4</td><td>Definir uma janela fixa de deploy para teste e rever a capacidade de QA</td><td>Espera em To Deploy e To Test domina o lead time (SIRIS, MOVPAV); retros pedem mais testers</td><td><span class="bd y">Média</span></td></tr>
+<tr><td>5</td><td>Garantir ambientes de teste estáveis e aviso prévio de mudanças</td><td>Referido em três retrospetivas (MOVPAV, ABIO, TIS Performance)</td><td><span class="bd y">Média</span></td></tr>
+<tr><td>6</td><td>Rever o compromisso da TAAG Sprint 5</td><td>53 pts para 38,25 de capacidade</td><td><span class="bd y">Média</span></td></tr>
+<tr><td>7</td><td>Adotar um modelo único de planning, review e retro no núcleo, com capacidade real e ações com responsável e prazo</td><td>Hoje há 3 formatos diferentes, atas copiadas e retros sem plano de ação</td><td><span class="bd y">Média</span></td></tr>
+<tr><td>8</td><td>Fechar as 15 sprints SIRIS vencidas e mover o trabalho pendente</td><td>28 sprints abertas em simultâneo dificultam o planeamento e a medição</td><td><span class="bd gr">Baixa</span></td></tr>
+</tbody></table></div>
+</section>
+
+
+</div>
+
+</body></html>
